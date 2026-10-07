@@ -1,0 +1,223 @@
+:root {
+  color-scheme: dark;
+  --bg: #09090b;
+  --bg-2: #141416;
+  --field: #0c0c0e;
+  --line: #2a2a2e;
+  --ink: #fafafa;
+  --muted: #a1a1aa;
+  --primary: #ff6a00;
+  --primary-2: #ffb074;
+  --primary-soft: rgba(255, 106, 0, 0.14);
+  --danger: #fb7185;
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(720px 320px at 0% -10%, rgba(255, 106, 0, 0.22), transparent 55%),
+    var(--bg);
+}
+
+button, input, textarea { font: inherit; color: inherit; }
+
+button { cursor: pointer; }
+
+a { color: var(--primary-2); }
+
+.app {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 48px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 640;
+  letter-spacing: -0.045em;
+}
+
+header h1 span { color: var(--primary); }
+
+header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 46ch;
+}
+
+.status {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  border: 1px solid rgba(255, 106, 0, 0.4);
+  color: var(--primary-2);
+  font-size: 13px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.panel {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+label.block {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--field);
+  padding: 14px;
+  line-height: 1.5;
+}
+
+textarea:focus, input:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip, .choice, .speak, .ghost {
+  border: 1px solid var(--line);
+  background: #101012;
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+
+.chip { color: var(--muted); font-size: 14px; }
+.chip:hover, .choice:hover, .ghost:hover {
+  border-color: var(--primary);
+  color: var(--ink);
+}
+
+.choice.on {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #1a0c04;
+  font-weight: 640;
+}
+
+.voice {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  background: var(--primary-soft);
+  border: 1px solid rgba(255, 106, 0, 0.45);
+  color: var(--ink);
+}
+
+.voice strong { display: block; font-size: 16px; color: var(--primary-2); }
+.voice small { color: var(--muted); }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.row b {
+  font-size: 22px;
+  font-weight: 640;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+  margin: 8px 0 14px;
+}
+
+.choices { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+
+.seed {
+  display: flex;
+  gap: 8px;
+}
+
+.seed input {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--field);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.speak {
+  margin-top: 16px;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #1a0c04;
+  font-weight: 640;
+  padding: 14px;
+}
+
+.speak:hover:not(:disabled) { background: #ff8124; }
+
+.speak:disabled { opacity: 0.5; cursor: wait; }
+
+.error { color: var(--danger); min-height: 1.2em; margin: 10px 0 0; }
+
+.player {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+audio {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.meta { color: var(--muted); font-size: 14px; }
+
+.note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  header h1 { font-size: 32px; }
+}
