@@ -2,3 +2,7 @@ ema-lightning==1.0.1
 fastapi==0.142.2
 uvicorn==0.54.0
 torch==2.5.1
+sherpa-onnx==1.13.4
+soundfile>=0.12,<1
+livekit-agents[google]~=1.8
+livekit-api

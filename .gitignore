@@ -1,4 +1,7 @@
 .venv/
+.env
+bin/
+turkish-stt-zipformer/
 __pycache__/
 *.py[cod]
 samples/
